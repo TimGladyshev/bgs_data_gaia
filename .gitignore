@@ -2,3 +2,4 @@ environment/
 game_data_raw.txt
 geckodriver.log
 .ipynb_checkpoints
+adv_techs_analysis/
