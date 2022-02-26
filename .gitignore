@@ -4,5 +4,11 @@ geckodriver.log
 .ipynb_checkpoints
 adv_techs_analysis/
 plots/
+two_players_data.csv
+three_players_data.csv
 four_players_data.csv
 update_script.py
+.idea/
+pos_on_score.zip
+taken_freq.zip
+freq_and_score.zip
