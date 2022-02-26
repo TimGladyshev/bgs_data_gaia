@@ -240,149 +240,7 @@ def update_all():
     three_players.to_csv("/var/www/TimGladyshev/gaia_stats/data/three_players_data.csv")
     four_players.to_csv("/var/www/TimGladyshev/gaia_stats/data/four_players_data.csv")
 
-    plot_adv_freq_remote(2, two_players)
-    plot_adv_freq_remote(3, three_players)
-    plot_adv_freq_remote(4, four_players)
-
-    plot_adv_track_remote(2, two_players)
-    plot_adv_track_remote(3, three_players)
-    plot_adv_track_remote(4, four_players)
-
-    plot_r1_structs_remote(2, two_players)
-    plot_r1_structs_remote(3, three_players)
-    plot_r1_structs_remote(4, four_players)
-
-
-def update_names():
-    op = webdriver.ChromeOptions()
-    op.add_argument('headless')
-    op.add_argument('--headless')
-    op.add_argument('--no-sandbox')
-    op.add_argument('--disable-dev-shm-usage')
-    driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install(), options=op)
-
-    url_games = 'https://www.boardgamers.space/boardgame/gaia-project/games'
-
-    games_set = set()
-
-    with open("game_names.txt", "r") as names_file:
-        lines = names_file.readlines()
-        for line in lines:
-            games_set.add(line)
-
-    names_file.close()
-
-    driver.get(url=url_games)
-    finished_button = driver.find_element_by_partial_link_text("Finished")
-    finished_button.click()
-
-    sleep(.5)
-    while driver.execute_script("return document.readyState") != "complete":
-        sleep(.05)
-
-    num_games_found = int(driver.find_element_by_class_name("card-title").text.split('(')[1].split(')')[0])
-
-    # link to click for next page
-    next_button = driver.find_elements_by_class_name("page-link")[-2]
-    # parent <li> can be disabled if last page
-    next_item = driver.find_elements_by_class_name("page-item")[-2]
-    # list of disabled items
-    disabled_items = driver.find_elements_by_class_name("disabled")
-
-    # list of names items
-    game_names = driver.find_elements_by_class_name("game-name")
-
-    with open("game_names.txt", "a") as names_file:
-
-        for name in game_names:
-            n = name.text
-            if n not in games_set:
-                names_file.write(n + '\n')
-
-        for i in range((num_games_found - len(games_set)) // 10):
-            try:
-                next_button.click()
-                sleep(.1)
-
-                # wait for JS to load -> elements are same, only text and class are updated
-                while driver.execute_script("return document.readyState") != "complete":
-                    sleep(.05)
-
-                next_button = driver.find_elements_by_class_name("page-link")[-2]
-                next_item = driver.find_elements_by_class_name("page-item")[-2]
-                disabled_items = driver.find_elements_by_class_name("disabled")
-
-                game_names = driver.find_elements_by_class_name("game-name")
-
-                for name in game_names:
-                    n = name.text
-                    if n not in games_set:
-                        names_file.write(n + '\n')
-            except:
-                break
-
-    names_file.close()
-    driver.close()
-
-
-def fetch(session, game_name, lock, file):
-    base_url = "https://www.boardgamers.space/api/game/"
-    with session.get(base_url + game_name) as response:
-        data = response.json()
-        if response.status_code != 200:
-            return 1
-        else:
-            with lock:
-                try:
-                    file.write(json.dumps(data) + "\n")
-                except Exception as err:
-                    print(err)
-                finally:
-                    return 0
-    return 0
-
-
-async def get_data_asynchronous(names_set, file_lock, file):
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        with requests.Session() as session:
-            loop = asyncio.get_event_loop()
-
-            tasks = [
-                loop.run_in_executor(
-                    executor,
-                    fetch,
-                    *(session, name, file_lock, file)
-                )
-                for name in names_set
-            ]
-
-            for response in await asyncio.gather(*tasks):
-                pass
-
-
-def fetch_jsons():
-    game_names = open("game_names.txt", "r")
-    names_set = set()
-    for name in game_names:
-        names_set.add(name)
-
-    game_names.close()
-
-    # clear jsons
-    open('game_data_raw.txt', 'w').close()
-
-    m = multiprocessing.Manager()
-    lock = m.Lock()
-    loop = asyncio.get_event_loop()
-    with open("game_data_raw.txt", "a") as game_data_raw:
-        future = asyncio.ensure_future(get_data_asynchronous(names_set, lock, game_data_raw))
-        loop.run_until_complete(future)
-        parse_jsons()
-        game_data_raw.close()
-
-
-def wc(filename):
-    return int(check_output(["wc", "-l", filename]).split()[0])
+    make_plots(two_players, three_players, four_players)
 
 
 def parse_tree_builds(dat, tree, pos, faction):
@@ -586,78 +444,6 @@ def parse_tree(tree, errors_set):
         return False, "", "", errors_set
 
 
-def parse_jsons():
-    with open("game_data_raw.txt", "r") as game_data_raw:
-
-        two_players = None
-        three_players = None
-        four_players = None
-
-        errors_set = dict()
-
-        lines = game_data_raw.readlines()
-        for line in lines:
-            game_tree = json.loads(line)
-            success, df, num_player, errors_set = parse_tree(game_tree, errors_set)
-            if success:
-                if num_player == 2:
-                    if two_players is not None:
-                        two_players = pd.concat([two_players, df], axis=0, join="outer", ignore_index=True)
-                    else:
-                        two_players = df
-                elif num_player == 3:
-                    if three_players is not None:
-                        three_players = pd.concat([three_players, df], axis=0, join="outer", ignore_index=True)
-                    else:
-                        three_players = df
-                else:
-                    if four_players is not None:
-                        four_players = pd.concat([four_players, df], axis=0, join="outer", ignore_index=True)
-                    else:
-                        four_players = df
-
-        two_players.to_pickle("two_players_data")
-        three_players.to_pickle("three_players_data")
-        four_players.to_pickle("four_players_data")
-
-        err_types = set(errors_set.values())
-        err_to_count = {}
-        for err in err_types:
-            count = sum(map(str(err).__eq__, errors_set.values()))
-            err_to_count[err] = count
-
-        error_string = ""
-        for err in err_types:
-            for key in errors_set.keys():
-                if errors_set[key] == err:
-                    error_string += 'Game Name: ' + key + ' Total Error Count: ' + str(err_to_count[err]) + '\n'
-                    error_string += err
-                    error_string += '\n------'
-                    break
-
-        if not os.path.exists("/home/tim/gaia_stats"):
-            os.mkdir('/home/tim/gaia_stats')
-
-        if not os.path.exists("/home/tim/gaia_stats/errors"):
-            os.mkdir("/home/tim/gaia_stats/errors")
-
-        with open('/home/tim/gaia_stats/errors/index.html', 'w') as file:
-            html = "<html><head></head><body><p>" + error_string + "</p></body></html>"
-            file.write(html)
-
-        make_graph_adv_freq(2, two_players)
-        make_graph_adv_track(2, two_players)
-        make_graph_r1_structs(2, two_players)
-
-        make_graph_adv_freq(3, three_players)
-        make_graph_adv_track(3, three_players)
-        make_graph_r1_structs(3, three_players)
-
-        make_graph_adv_freq(4, four_players)
-        make_graph_adv_track(4, four_players)
-        make_graph_r1_structs(4, four_players)
-
-
 def plot_adv_freq_remote(num_players, dat_x):
     for faction in factions:
         factions_pos = []
@@ -672,62 +458,75 @@ def plot_adv_freq_remote(num_players, dat_x):
         for val in adv_techs.values():
             x.append(val)
 
+        # get overall percents for printing
+        overall = [0] * len(adv_techs.values())
+        for i in range(num_players):
+            for j, tech in enumerate(adv_techs.values()):
+                df = factions_pos[i]
+
+                # get all games where tech is present
+                slots_df = []
+                tech_slots = [
+                    "tech_adv-terra",
+                    "tech_adv-nav",
+                    "tech_adv-int",
+                    "tech_adv-gaia",
+                    "tech_adv-eco",
+                    "tech_adv-sci"
+                ]
+                for slot in tech_slots:
+                    slots_df.append(factions_in[factions_in[slot] == tech])
+                df_avail = pd.concat(slots_df, ignore_index=True)
+
+                freq_taken = len(df[df['pos_' + str(i + 1) + '_adv_tech_taken_' + tech] == True]) / len(df_avail)
+                overall[j] += freq_taken
+
         for i in range(num_players):
             y = []
-            for tech in adv_techs.values():
+            info = []
+            for j, tech in enumerate(adv_techs.values()):
                 df = factions_pos[i]
-                y.append(len(df[df['pos_' + str(i + 1) + '_adv_tech_taken_' + tech] == True]) / len(factions_in))
 
-            fig.add_trace(go.Bar(x=x, y=y, name='pos_' + str(i + 1)))
+                # get all games where tech is present
+                slots_df = []
+                tech_slots = [
+                    "tech_adv-terra",
+                    "tech_adv-nav",
+                    "tech_adv-int",
+                    "tech_adv-gaia",
+                    "tech_adv-eco",
+                    "tech_adv-sci"
+                ]
+                for slot in tech_slots:
+                    slots_df.append(factions_in[factions_in[slot] == tech])
+                df_avail = pd.concat(slots_df, ignore_index=True)
 
+                freq_taken = len(df[df['pos_' + str(i + 1) + '_adv_tech_taken_' + tech] == True]) / len(df_avail)
+                y.append(round(freq_taken * 100, 3))
+                info.append(round(((freq_taken / overall[j]) * 100), 3))
+            fig.add_trace(go.Bar(x=x, y=y, name='rank_' + str(i + 1),
+                                 hovertemplate=
+                                 '<br><b>Rank</b>: ' + str(i + 1) +
+                                 '<br><b>Tech</b>: %{x}' +
+                                 '<br><b>% Taken if Available</b>: %{y}' +
+                                 '<br><b>% Rank if Taken</b>: %{text}' +
+                                 '<br><b>% Rank overall</b>: ' + str(
+                                     round((len(factions_pos[i]) / len(factions_in)) * 100, 2)) +
+                                 '<extra></extra>',
+                                 text=info,
+                                 texttemplate=''))
+
+        title_text = "Frequency Advanced Tech Tile is Taken and the Resulting Rank Distribution: " + faction
+
+        fig.update_layout(uniformtext_minsize=100000, uniformtext_mode='hide')
         fig.update_layout(barmode='stack')
         fig.update_xaxes(categoryorder='total ascending')
-        fig.update_layout(title_text=faction)
+        fig.update_layout(title_text=title_text, xaxis_title="Advanced Tech",
+                          yaxis_title="Percent of Games Taken")
 
         fig.write_html(
             "/var/www/TimGladyshev/gaia_stats/" + str(
                 num_players) + "p/adv_techs_analysis/taken_freq/" + faction + ".html")
-
-
-def make_graph_adv_freq(num_players, dat_x):
-    for faction in factions:
-        factions_pos = []
-        for pos in range(num_players):
-            dat = dat_x[dat_x['pos_' + str(pos + 1) + '_dropped'] == False]
-            factions_pos.append(dat[dat["pos_" + str(pos + 1) + "_faction"] == faction])
-        factions_in = pd.concat(factions_pos, ignore_index=True)
-
-        fig = go.Figure()
-
-        x = []
-        for val in adv_techs.values():
-            x.append(val)
-
-        for i in range(num_players):
-            y = []
-            for tech in adv_techs.values():
-                df = factions_pos[i]
-                y.append(len(df[df['pos_' + str(i + 1) + '_adv_tech_taken_' + tech] == True]) / len(factions_in))
-
-            fig.add_trace(go.Bar(x=x, y=y, name='pos_' + str(i + 1)))
-
-        fig.update_layout(barmode='stack')
-        fig.update_xaxes(categoryorder='total ascending')
-        fig.update_layout(title_text=faction)
-
-        if not os.path.exists("/home/tim/gaia_stats"):
-            os.mkdir('/home/tim/gaia_stats')
-
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p"):
-            os.mkdir("home/tim/gaia_stats/" + num_players + "p")
-
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis"):
-            os.mkdir("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis")
-
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis/taken_freq"):
-            os.mkdir("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis/taken_freq")
-
-        fig.write_html("home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis/taken_freq/" + faction + ".html")
 
 
 def plot_adv_track_remote(num_players, dat_x):
@@ -809,7 +608,17 @@ def plot_adv_track_remote(num_players, dat_x):
                 text=game_nums[i]
             ))
 
-        fig.update_layout(title="Score for Advanced Techs: " + faction,
+        average_score_overall = 0
+        for j in range(num_players):
+            df = factions_pos[j]
+            average_score_overall += df['pos_' + str(j + 1) + "_score"].mean()
+        average_score_overall = average_score_overall / num_players
+
+        fig.add_vline(x=average_score_overall, line_dash="dot", line_width=2,
+                      annotation_text="overall average: " + str(round(average_score_overall, 2))
+                      )
+
+        fig.update_layout(title="Advanced Technology Impact on Average Score by Track Taken: " + faction,
                           xaxis_title="Average Score",
                           yaxis_title="Advanced Tech")
 
@@ -818,16 +627,16 @@ def plot_adv_track_remote(num_players, dat_x):
                 num_players) + "p/adv_techs_analysis/pos_on_score/" + faction + ".html")
 
 
-def make_graph_adv_track(num_players, dat_x):
+def plot_base_track_remote(num_players, dat_x):
     for faction in factions:
 
         tech_slots = [
-            "tech_adv-terra",
-            "tech_adv-nav",
-            "tech_adv-int",
-            "tech_adv-gaia",
-            "tech_adv-eco",
-            "tech_adv-sci"
+            "tech_terra",
+            "tech_nav",
+            "tech_int",
+            "tech_gaia",
+            "tech_eco",
+            "tech_sci"
         ]
 
         factions_pos = []
@@ -836,7 +645,7 @@ def make_graph_adv_track(num_players, dat_x):
             factions_pos.append(dat[dat["pos_" + str(pos + 1) + "_faction"] == faction])
         factions_in = pd.concat(factions_pos, ignore_index=True)
 
-        techs = list(adv_techs.values())
+        techs_list = list(techs.values())
 
         slot_scores = []
         for i in range(len(tech_slots) + 1):
@@ -848,7 +657,7 @@ def make_graph_adv_track(num_players, dat_x):
 
         fig = go.Figure()
 
-        for tech in adv_techs.values():
+        for tech in techs.values():
             not_taken_score = 0
             not_taken_amount = 0
             for i, slot in enumerate(tech_slots):
@@ -857,10 +666,10 @@ def make_graph_adv_track(num_players, dat_x):
                 for pos in range(num_players):
                     df = factions_pos[pos]
                     df = df[df[slot] == tech]
-                    df_not_taken = df[df['pos_' + str(pos + 1) + "_adv_tech_taken_" + tech] == False]
+                    df_not_taken = df[df['pos_' + str(pos + 1) + "_tech_taken_" + tech] == False]
                     not_taken_score += df_not_taken['pos_' + str(pos + 1) + "_score"].mean()
                     not_taken_amount += len(df_not_taken)
-                    df_taken = df[df['pos_' + str(pos + 1) + "_adv_tech_taken_" + tech] == True]
+                    df_taken = df[df['pos_' + str(pos + 1) + "_tech_taken_" + tech] == True]
                     taken_score += df_taken['pos_' + str(pos + 1) + "_score"].mean()
                     taken_amount += len(df_taken)
                 slot_scores[i].append(taken_score / num_players)
@@ -868,7 +677,7 @@ def make_graph_adv_track(num_players, dat_x):
             slot_scores[-1].append(not_taken_score / 6 / num_players)
             game_nums[-1].append(not_taken_amount)
 
-        tech_slots.append("tech_adv-not_taken")
+        tech_slots.append("tech_not_taken")
 
         colors = [
             'rgba(165, 42, 42, .9)',
@@ -884,12 +693,12 @@ def make_graph_adv_track(num_players, dat_x):
         for i, slot in enumerate(tech_slots):
             fig.add_trace(go.Scatter(
                 x=slot_scores[i],
-                y=techs,
+                y=techs_list,
                 mode="markers",
                 marker_color=colors[i],
-                name=slot.split('-')[1],
+                name=slot,
                 hovertemplate=
-                '<br><b>Position</b>: ' + slot.split('-')[1] +
+                '<br><b>Position</b>: ' + slot +
                 '<br><b>Tech</b>: %{y}' +
                 '<br><b>Ave Score</b>: %{x}' +
                 '<br><b>Num Found</b>: %{text}' +
@@ -897,23 +706,84 @@ def make_graph_adv_track(num_players, dat_x):
                 text=game_nums[i]
             ))
 
-        fig.update_layout(title="Score for Advanced Techs: " + faction,
+        average_score_overall = 0
+        for j in range(num_players):
+            df = factions_pos[j]
+            average_score_overall += df['pos_' + str(j + 1) + "_score"].mean()
+        average_score_overall = average_score_overall / num_players
+
+        fig.add_vline(x=average_score_overall, line_dash="dot", line_width=2,
+                      annotation_text="overall average: " + str(round(average_score_overall, 2)))
+
+        text = "Basic Technology Impact on Average Score by Track Taken: " + faction
+        fig.update_layout(title=text,
                           xaxis_title="Average Score",
-                          yaxis_title="Advanced Tech")
+                          yaxis_title="Tech")
 
-        if not os.path.exists("/home/tim/gaia_stats"):
-            os.mkdir('/home/tim/gaia_stats')
+        fig.write_html(
+            "/var/www/TimGladyshev/gaia_stats/" + str(
+                num_players) + "p/base_tech_analysis/pos_on_score/" + faction + ".html")
 
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p"):
-            os.mkdir("home/tim/gaia_stats/" + num_players + "p")
 
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis"):
-            os.mkdir("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis")
+def plot_base_freq_remote(num_players, dat_x):
+    for faction in factions:
+        factions_pos = []
+        for pos in range(num_players):
+            dat = dat_x[dat_x['pos_' + str(pos + 1) + '_dropped'] == False]
+            factions_pos.append(dat[dat["pos_" + str(pos + 1) + "_faction"] == faction])
+        factions_in = pd.concat(factions_pos, ignore_index=True)
 
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis/pos_on_score"):
-            os.mkdir("/home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis/pos_on_score")
+        if len(factions_in) == 0:
+            factions_in.head()
+            raise ValueError('faction not found: ' + faction)
 
-        fig.write_html("home/tim/gaia_stats/" + num_players + "p/adv_techs_analysis/pos_on_score/" + faction + ".html")
+        fig = go.Figure()
+
+        x = []
+        for val in techs.values():
+            x.append(val)
+
+        # get overall percents for printing
+        overall = [0] * len(techs.values())
+        for i in range(num_players):
+            for j, tech in enumerate(techs.values()):
+                df = factions_pos[i]
+
+                freq_taken = len(df[df['pos_' + str(i + 1) + '_tech_taken_' + tech] == True]) / len(factions_in)
+                overall[j] += freq_taken
+
+        for i in range(num_players):
+            y = []
+            info = []
+            for j, tech in enumerate(techs.values()):
+                df = factions_pos[i]
+
+                freq_taken = len(df[df['pos_' + str(i + 1) + '_tech_taken_' + tech] == True]) / len(factions_in)
+                y.append(round(freq_taken * 100, 3))
+                info.append(round(((freq_taken / overall[j]) * 100), 3))
+            fig.add_trace(go.Bar(x=x, y=y, name='rank_' + str(i + 1),
+                                 hovertemplate=
+                                 '<br><b>Rank</b>: ' + str(i + 1) +
+                                 '<br><b>Tech</b>: %{x}' +
+                                 '<br><b>% Taken for Rank</b>: %{y}' +
+                                 '<br><b>% Rank if Taken</b>: %{text}' +
+                                 '<br><b>% Rank overall</b>: ' + str(
+                                     round((len(factions_pos[i]) / len(factions_in)) * 100, 2)) +
+                                 '<extra></extra>',
+                                 text=info,
+                                 texttemplate=''))
+
+        title_text = "Frequency Basic Tech Tile is Taken and the Resulting Rank Distribution: " + faction
+
+        fig.update_layout(uniformtext_minsize=100000, uniformtext_mode='hide')
+        fig.update_layout(barmode='stack')
+        fig.update_xaxes(categoryorder='total ascending')
+        fig.update_layout(title_text=title_text, xaxis_title="Basic Tech",
+                          yaxis_title="Percent of Games Taken")
+
+        fig.write_html(
+            "/var/www/TimGladyshev/gaia_stats/" + str(
+                num_players) + "p/base_tech_analysis/taken_freq/" + faction + ".html")
 
 
 def plot_r1_structs_remote(num_players, dat_x):
@@ -976,12 +846,12 @@ def plot_r1_structs_remote(num_players, dat_x):
 
             # create exact category
             dat[structs_exact] = [" " +
-                                  str(m) + '_m / ' +
-                                  str(ts) + '_ts / ' +
-                                  str(lab) + '_lab / ' +
-                                  str(PI) + '_pi / ' +
-                                  str(ac1) + '_ac1 / ' +
-                                  str(ac2) + '_ac2'
+                                  str(m) + '-m_' +
+                                  str(ts) + '-ts_' +
+                                  str(lab) + '-lab_' +
+                                  str(PI) + '-pi_' +
+                                  str(ac1) + '-ac1_' +
+                                  str(ac2) + '-ac2'
                                   for m, ts, lab, PI, ac1, ac2 in zip(
                     dat[prefix + '_m'],
                     dat[prefix + '_ts'],
@@ -1023,139 +893,38 @@ def plot_r1_structs_remote(num_players, dat_x):
                          color_continuous_midpoint=midpoint
                          )
         fig.update_layout(margin=dict(t=50, l=25, r=25, b=25))
+        fig.update_layout(
+            title_text="R1 Structures: Frequency and Impact on Score Relative to All Factions Average (" + str(
+                round(midpoint, 2)) + "): " + faction)
 
         fig.write_html(
             "/var/www/TimGladyshev/gaia_stats/" + str(
                 num_players) + "p/r1_structs_analysis/freq_and_score/" + faction + ".html")
 
 
-def make_graph_r1_structs(num_players, dat_x):
-    for faction in factions:
-        factions_pos = []
-        for pos in range(num_players):
-            dat = dat_x
+def make_plots(two_players, three_players, four_players):
+    plot_adv_freq_remote(2, two_players)
+    plot_adv_freq_remote(3, three_players)
+    plot_adv_freq_remote(4, four_players)
 
-            # select faction
-            dat = dat[dat["pos_" + str(pos + 1) + "_faction"] == faction]
+    plot_adv_track_remote(2, two_players)
+    plot_adv_track_remote(3, three_players)
+    plot_adv_track_remote(4, four_players)
 
-            # remove dropped players
-            dat = dat[dat['pos_' + str(pos + 1) + '_dropped'] == False]
+    plot_r1_structs_remote(2, two_players)
+    plot_r1_structs_remote(3, three_players)
+    plot_r1_structs_remote(4, four_players)
 
-            # labels
-            prefix = "pos_" + str(pos + 1) + '_buildings_r_1'
-            structs_class = 'r1_structs_class_' + faction
-            structs_exact = 'r1_structs_exact_' + faction
-            over_all_score = 'ave_score_' + faction
-            over_all_elo = 'ave_elo_' + faction
+    plot_base_track_remote(2, two_players)
+    plot_base_track_remote(3, three_players)
+    plot_base_track_remote(4, four_players)
 
-            # get scores and elos
-            dat[over_all_score] = dat['pos_' + str(pos + 1) + '_score']
-            dat[over_all_elo] = dat['pos_' + str(pos + 1) + '_elo']
-
-            # structs placed
-            dat[prefix + '_PI'] = pd.to_numeric(dat[prefix + '_PI'], downcast='integer')
-            dat[prefix + '_ac1'] = pd.to_numeric(dat[prefix + '_ac1'], downcast='integer')
-            dat[prefix + '_ac2'] = pd.to_numeric(dat[prefix + '_ac2'], downcast='integer')
-            dat[prefix + '_lab'] = pd.to_numeric(dat[prefix + '_lab'], downcast='integer')
-            dat[prefix + '_ts'] = pd.to_numeric(dat[prefix + '_ts'], downcast='integer')
-            dat[prefix + '_m'] = pd.to_numeric(dat[prefix + '_m'], downcast='integer')
-
-            # create general structs catergory
-            dat.loc[dat[prefix + '_PI'] > 0, structs_class] = 'PI'
-            dat.loc[dat[prefix + '_ac1'] > 0, structs_class] = 'ac1'
-            dat.loc[dat[prefix + '_ac2'] > 0, structs_class] = 'ac2'
-            dat.loc[
-                (dat[prefix + '_lab'] > 0) &
-                (dat[prefix + '_PI'] == 0) &
-                (dat[prefix + '_ac1'] == 0) &
-                (dat[prefix + '_ac2'] == 0)
-                , structs_class] = 'lab'
-
-            dat.loc[
-                (dat[prefix + '_ts'] > 0) &
-                (dat[prefix + '_lab'] == 0) &
-                (dat[prefix + '_PI'] == 0) &
-                (dat[prefix + '_ac1'] == 0) &
-                (dat[prefix + '_ac2'] == 0)
-                , structs_class] = 'ts'
-
-            dat.loc[
-                (dat[prefix + '_ts'] == 0) &
-                (dat[prefix + '_lab'] == 0) &
-                (dat[prefix + '_PI'] == 0) &
-                (dat[prefix + '_ac1'] == 0) &
-                (dat[prefix + '_ac2'] == 0)
-                , structs_class] = 'm'
-
-            # create exact category
-            dat[structs_exact] = [" " +
-                                  str(m) + '_m / ' +
-                                  str(ts) + '_ts / ' +
-                                  str(lab) + '_lab / ' +
-                                  str(PI) + '_pi / ' +
-                                  str(ac1) + '_ac1 / ' +
-                                  str(ac2) + '_ac2'
-                                  for m, ts, lab, PI, ac1, ac2 in zip(
-                    dat[prefix + '_m'],
-                    dat[prefix + '_ts'],
-                    dat[prefix + '_lab'],
-                    dat[prefix + '_PI'],
-                    dat[prefix + '_ac1'],
-                    dat[prefix + '_ac2'])
-                                  ]
-
-            factions_pos.append(dat)
-
-        factions_in = pd.concat(factions_pos, ignore_index=True)
-
-        unique_starts = factions_in[[structs_exact, structs_class, over_all_score, over_all_elo]]
-        unique_starts['class_counts'] = 0
-        counts = unique_starts.groupby(structs_exact)['class_counts'].transform('count').to_frame()
-        unique_starts = unique_starts[[structs_exact, structs_class, over_all_score, over_all_elo]]
-        unique_starts = pd.concat([unique_starts, counts], axis=1)
-        unique_starts = unique_starts.groupby([structs_class, structs_exact]).mean().reset_index()
-        unique_starts['class_counts'] = pd.to_numeric(unique_starts['class_counts'], downcast='integer')
-
-        # remove really low scores
-        # unique_starts = unique_starts[(np.abs(stats.zscore(unique_starts[over_all_score])) > 2)]
-        unique_starts = unique_starts[unique_starts[over_all_score].between(unique_starts[over_all_score].quantile(.15),
-                                                                            unique_starts[over_all_score].quantile(1))]
-
-        # get average score
-        midpoint = 0
-        for i in range(num_players):
-            midpoint += np.mean(dat_x[dat_x['pos_' + str(i + 1) + '_dropped'] == False]['pos_' + str(i + 1) + '_score'])
-        midpoint /= num_players
-
-        # midpoint is average for all factions overall - but color ends are highest and lowest score by that faction
-        fig = px.treemap(unique_starts,
-                         path=[px.Constant('R1 Structures: Frequency and Overall Score for ' + faction), structs_class,
-                               structs_exact], values='class_counts',
-                         color=over_all_score, hover_data=[over_all_elo],
-                         color_continuous_scale='RdBu',
-                         color_continuous_midpoint=midpoint
-                         )
-        fig.update_layout(margin=dict(t=50, l=25, r=25, b=25))
-
-        if not os.path.exists("/home/tim/gaia_stats"):
-            os.mkdir('/home/tim/gaia_stats')
-
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p"):
-            os.mkdir("home/tim/gaia_stats/" + num_players + "p")
-
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p/r1_structs_analysis"):
-            os.mkdir("/home/tim/gaia_stats/" + num_players + "p/r1_structs_analysis")
-
-        if not os.path.exists("/home/tim/gaia_stats/" + num_players + "p/r1_structs_analysis/freq_and_score"):
-            os.mkdir("/home/tim/gaia_stats/" + num_players + "p/r1_structs_analysis/freq_and_score")
-
-        fig.write_html(
-            "home/tim/gaia_stats/" + num_players + "p/r1_structs_analysis/freq_and_score/" + faction + ".html")
+    plot_base_freq_remote(2, two_players)
+    plot_base_freq_remote(3, three_players)
+    plot_base_freq_remote(4, four_players)
 
 
 def main():
-    # update_names()
-    # fetch_jsons()
     update_all()
 
 
