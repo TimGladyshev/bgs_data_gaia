@@ -11,16 +11,16 @@ pip install -r requirements.txt
 
 ## Notebooks
 
-### fetch_names
+#### fetch_names
 Uses Selenium to scrape names for all completed games.
 
-### fetch_jsons
+#### fetch_jsons
 Fetches jsons from the game data [api](https://www.boardgamers.space/api/game/Modern-riddle-1723) and stores locally as raw json.
 
-### parse_jsons
+#### parse_jsons
 Parses json to pandas df and saves as pickle or csv.
 
-### others:
+#### others:
 Creates plotly figures. 
 
 ## Contributing
