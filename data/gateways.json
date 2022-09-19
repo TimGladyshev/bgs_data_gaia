@@ -1,0 +1,1372 @@
+[
+ {
+  "provider": "3 River Wireless",
+  "country": "United States",
+  "link": "##########@sms.3rivers.net"
+ },
+ {
+  "provider": "Advantage Communications",
+  "country": "United States",
+  "link": "##########@advantagepaging.com"
+ },
+ {
+  "provider": "Aircel",
+  "country": "India",
+  "link": "##########@aircel.co.in"
+ },
+ {
+  "provider": "Aircel Tamil Nadu",
+  "country": "India",
+  "link": "##########@airsms.com"
+ },
+ {
+  "provider": "AirTel",
+  "country": "India",
+  "link": "91##########@airtelmail.com"
+ },
+ {
+  "provider": "AirTel Andhra Pradesh",
+  "country": "India",
+  "link": "91##########@airtelap.com"
+ },
+ {
+  "provider": "AirTel Kerala",
+  "country": "India",
+  "link": "91##########@airtelkerala.com"
+ },
+ {
+  "provider": "AirTel Kolkata",
+  "country": "India",
+  "link": "91##########@airtelkol.com"
+ },
+ {
+  "provider": "AirTel Tamil Nadu",
+  "country": "India",
+  "link": "91##########@airtelmobile.com"
+ },
+ {
+  "provider": "AirVoice",
+  "country": "United States",
+  "link": "##########@mmode.com"
+ },
+ {
+  "provider": "AKOS",
+  "country": "Russia",
+  "link": "#ERROR!"
+ },
+ {
+  "provider": "AllTel",
+  "country": "United States",
+  "link": "##########@message.alltel.com"
+ },
+ {
+  "provider": "AT&T",
+  "country": "United States",
+  "link": "##########@txt.att.net"
+ },
+ {
+  "provider": "AU by KDDI",
+  "country": "Japan",
+  "link": "##########@ezweb.ne.jp"
+ },
+ {
+  "provider": "BaikalWestCom",
+  "country": "Russia",
+  "link": "##########@sms.bwc.ru"
+ },
+ {
+  "provider": "Beeline",
+  "country": "Ukraine",
+  "link": "#########@sms.beeline.ua"
+ },
+ {
+  "provider": "BeeLine GSM",
+  "country": "Russia",
+  "link": "7##########@sms.beemail.ru"
+ },
+ {
+  "provider": "Bell",
+  "country": "Canada",
+  "link": "##########@txt.bell.ca"
+ },
+ {
+  "provider": "Bell Mobility",
+  "country": "Canada",
+  "link": "##########@txt.bellmobility.ca"
+ },
+ {
+  "provider": "Bell South",
+  "country": "Chile",
+  "link": "##########@bellsouth.cl"
+ },
+ {
+  "provider": "Bell South",
+  "country": "United States",
+  "link": "##########@sms.bellsouth.com"
+ },
+ {
+  "provider": "Bell South (Blackberry)",
+  "country": "United States",
+  "link": "##########@bellsouthtips.com"
+ },
+ {
+  "provider": "Bell South Mobility",
+  "country": "United States",
+  "link": "##########@blsdcs.net"
+ },
+ {
+  "provider": "BH Mobile (BH Telecom)",
+  "country": "Bosnia and Herzegovina",
+  "link": "387##########@sms.bhmobile.ba"
+ },
+ {
+  "provider": "Bite",
+  "country": "Latvia",
+  "link": "371#########@biteplus.lv"
+ },
+ {
+  "provider": "Bite GSM",
+  "country": "Lithuania",
+  "link": "##########@sms.bite.lt, 3706#######@biteplius.lt"
+ },
+ {
+  "provider": "Bluegrass Cellular",
+  "country": "United States",
+  "link": "##########@sms.bluecell.com"
+ },
+ {
+  "provider": "Bluesky Communications",
+  "country": "American Samoa",
+  "link": "#######@psms.bluesky.as"
+ },
+ {
+  "provider": "Boost Mobile",
+  "country": "United States",
+  "link": "##########@myboostmobile.com"
+ },
+ {
+  "provider": "BPL mobile",
+  "country": "India",
+  "link": "##########@bplmobile.com"
+ },
+ {
+  "provider": "Cable and Wireless",
+  "country": "Panama",
+  "link": "##########@cwmovil.com"
+ },
+ {
+  "provider": "CallPlus",
+  "country": "United States",
+  "link": "##########@mmode.com"
+ },
+ {
+  "provider": "Carolina Mobile Communications",
+  "country": "United States",
+  "link": "##########@cmcpaging.com"
+ },
+ {
+  "provider": "Celcom",
+  "country": "Malaysia",
+  "link": "0#########@sms.celcom.com.my"
+ },
+ {
+  "provider": "Celforce \/ Fascel",
+  "country": "India",
+  "link": "##########@celforce.com"
+ },
+ {
+  "provider": "Cellcom",
+  "country": "Israel",
+  "link": "##########@cellcom.co.il"
+ },
+ {
+  "provider": "Cellis \/ LibanCell",
+  "country": "Lebanon",
+  "link": "961#######@ens.jinny.com.lb"
+ },
+ {
+  "provider": "Cellular One",
+  "country": "United States",
+  "link": "##########@mobile.celloneusa.com"
+ },
+ {
+  "provider": "Cellular One East Coast",
+  "country": "United States",
+  "link": "##########@phone.cellone.net"
+ },
+ {
+  "provider": "Cellular One PCS",
+  "country": "United States",
+  "link": "##########@paging.cellone-sf.com"
+ },
+ {
+  "provider": "Cellular One South West",
+  "country": "United States",
+  "link": "##########@swmsg.com"
+ },
+ {
+  "provider": "Cellular One West",
+  "country": "United States",
+  "link": "##########@mycellone.com"
+ },
+ {
+  "provider": "Cellular South",
+  "country": "United States",
+  "link": "##########@csouth1.com"
+ },
+ {
+  "provider": "Central Vermont Communications",
+  "country": "United States",
+  "link": "##########@cvcpaging.com"
+ },
+ {
+  "provider": "CenturyTel",
+  "country": "United States",
+  "link": "##########@messaging.centurytel.net"
+ },
+ {
+  "provider": "Chennai Skycell \/ Airtel",
+  "country": "India",
+  "link": "91##########@airtelchennai.com"
+ },
+ {
+  "provider": "China Mobile",
+  "country": "China",
+  "link": "##########@139.com"
+ },
+ {
+  "provider": "Cingular (GSM)",
+  "country": "United States",
+  "link": "##########@cingularme.com"
+ },
+ {
+  "provider": "Cingular (TDMA)",
+  "country": "United States",
+  "link": "##########@mmode.com"
+ },
+ {
+  "provider": "Cingular Wireless",
+  "country": "United States",
+  "link": "##########@mobile.mycingular.net"
+ },
+ {
+  "provider": "Claro",
+  "country": "Brazil",
+  "link": "##########@clarotorpedo.com.br"
+ },
+ {
+  "provider": "Claro",
+  "country": "Nicaragua",
+  "link": "##########@ideasclaro-ca.com"
+ },
+ {
+  "provider": "Claro",
+  "country": "Puerto Rico",
+  "link": "#######@vtexto.com"
+ },
+ {
+  "provider": "Claro Codetel",
+  "country": "Dominican Republic",
+  "link": "#######@claro.net.do"
+ },
+ {
+  "provider": "Comcel",
+  "country": "Colombia",
+  "link": "##########@comcel.com.co"
+ },
+ {
+  "provider": "Comviq GSM",
+  "country": "Sweden",
+  "link": "46#########@sms.comviq.se"
+ },
+ {
+  "provider": "Cook Paging",
+  "country": "United States",
+  "link": "##########@cookmail.com"
+ },
+ {
+  "provider": "Corr Wireless Communications",
+  "country": "United States",
+  "link": "##########@corrwireless.net"
+ },
+ {
+  "provider": "Cricket",
+  "country": "United States",
+  "link": "##########@sms.mycricket.com"
+ },
+ {
+  "provider": "CSL",
+  "country": "Hong Kong",
+  "link": "##########@mgw.mmsc1.hkcsl.com"
+ },
+ {
+  "provider": "CTI Movil",
+  "country": "Argentina",
+  "link": "##########@sms.ctimovil.com.ar"
+ },
+ {
+  "provider": "Dialog",
+  "country": "Sri Lanka",
+  "link": "##########@sms.dialog.lk"
+ },
+ {
+  "provider": "Digicel",
+  "country": "Dominica",
+  "link": "#######@digitextdm.com"
+ },
+ {
+  "provider": "Digicel",
+  "country": "Jamaica",
+  "link": "1876##########@digitextjm.com"
+ },
+ {
+  "provider": "Dobson Communications Corporation",
+  "country": "United States",
+  "link": "##########@mobile.dobson.net"
+ },
+ {
+  "provider": "Dobson-Alex Wireless \/ Dobson-Cellular One",
+  "country": "United States",
+  "link": "##########@mobile.cellularone.com"
+ },
+ {
+  "provider": "Dutchtone \/ Orange-NL",
+  "country": "Netherlands",
+  "link": "0#########@sms.orange.nl"
+ },
+ {
+  "provider": "E-Plus",
+  "country": "Germany",
+  "link": "0##########.smseplus.de"
+ },
+ {
+  "provider": "Edge Wireless",
+  "country": "United States",
+  "link": "##########@sms.edgewireless.com"
+ },
+ {
+  "provider": "EMT",
+  "country": "Estonia",
+  "link": "########@sms.emt.ee"
+ },
+ {
+  "provider": "Emtel",
+  "country": "Mauritius",
+  "link": "##########@emtelworld.net"
+ },
+ {
+  "provider": "Escotel",
+  "country": "India",
+  "link": "##########@escotelmobile.com"
+ },
+ {
+  "provider": "Esendex",
+  "country": "Spain",
+  "link": "#########@esendex.net"
+ },
+ {
+  "provider": "Europolitan",
+  "country": "Sweden",
+  "link": "46#########@europolitan.se"
+ },
+ {
+  "provider": "Eurotel",
+  "country": "Czech Republic",
+  "link": "#ERROR!"
+ },
+ {
+  "provider": "Fido (Microcell)",
+  "country": "Canada",
+  "link": "##########@fido.ca"
+ },
+ {
+  "provider": "Galaxy Corporation",
+  "country": "United States",
+  "link": "##########@sendabeep.net"
+ },
+ {
+  "provider": "Georgia geocell",
+  "country": "Georgia",
+  "link": "0##########@sms.ge"
+ },
+ {
+  "provider": "Globalstar",
+  "country": "Global (Satellite)",
+  "link": "##########@msg.globalstarusa.com"
+ },
+ {
+  "provider": "Globe Telecom",
+  "country": "Philippines",
+  "link": "63##########@pmms.globe.com.ph"
+ },
+ {
+  "provider": "Golden Telecom",
+  "country": "Ukraine",
+  "link": "#########@sms.goldentele.com"
+ },
+ {
+  "provider": "GrayLink \/ Porta-Phone",
+  "country": "United States",
+  "link": "##########@epage.porta-phone.com"
+ },
+ {
+  "provider": "GTE",
+  "country": "United States",
+  "link": "##########@gte.pagegate.net"
+ },
+ {
+  "provider": "Helio",
+  "country": "South Korea",
+  "link": "##########@myhelio.com"
+ },
+ {
+  "provider": "Houston Cellular",
+  "country": "United States",
+  "link": "##########@text.houstoncellular.net"
+ },
+ {
+  "provider": "ICE",
+  "country": "Costa Rica",
+  "link": "##########@ice.cr"
+ },
+ {
+  "provider": "Idea Cellular",
+  "country": "India",
+  "link": "##########@ideacellular.net"
+ },
+ {
+  "provider": "Inland Cellular Telephone",
+  "country": "United States",
+  "link": "##########@inlandlink.com"
+ },
+ {
+  "provider": "Iridium",
+  "country": "Global (Satellite)",
+  "link": "##########@msg.iridium.com"
+ },
+ {
+  "provider": "Israel Orange IL",
+  "country": "Israel",
+  "link": "##########@shiny.co.il"
+ },
+ {
+  "provider": "Iusacell",
+  "country": "Mexico",
+  "link": "##########@rek2.com.mx"
+ },
+ {
+  "provider": "JSM Tele-Page",
+  "country": "United States",
+  "link": "##########@jsmtel.com"
+ },
+ {
+  "provider": "Koodo Mobile",
+  "country": "Canada",
+  "link": "##########@msg.koodomobile.com"
+ },
+ {
+  "provider": "Kyivstar",
+  "country": "Latvia",
+  "link": "#########@smsmail.lmt.lv"
+ },
+ {
+  "provider": "Kyivstar (Contract Customers)",
+  "country": "Ukraine",
+  "link": "380#########@sms.kyivstar.net"
+ },
+ {
+  "provider": "Kyivstar (Prepaid Customers)",
+  "country": "Ukraine",
+  "link": "380#########@2sms.kyivstar.net"
+ },
+ {
+  "provider": "Labas<\/td><td>",
+  "country": "Lithuania",
+  "link": "3706#######@labas.lt"
+ },
+ {
+  "provider": "Lauttamus Communication",
+  "country": "United States",
+  "link": "##########@e-page.net"
+ },
+ {
+  "provider": "Life:)",
+  "country": "Ukraine",
+  "link": "380#########@life.com.ua"
+ },
+ {
+  "provider": "LMT",
+  "country": "Latvia",
+  "link": "#########@sms.lmt.lv"
+ },
+ {
+  "provider": "M1",
+  "country": "Singapore",
+  "link": "##########@m1.com.sg"
+ },
+ {
+  "provider": "Manitoba Telecom Systems",
+  "country": "Canada",
+  "link": "##########@text.mtsmobility.com"
+ },
+ {
+  "provider": "Mannesmann Mobilefunk",
+  "country": "Germany",
+  "link": "##########@d2-message.de"
+ },
+ {
+  "provider": "MaxMobil",
+  "country": "Austria",
+  "link": "##########@maxmail.at"
+ },
+ {
+  "provider": "MCI",
+  "country": "United States",
+  "link": "##########@pagemci.com"
+ },
+ {
+  "provider": "MCI Phone",
+  "country": "United States",
+  "link": "##########@mci.com"
+ },
+ {
+  "provider": "Megafon Center",
+  "country": "Russia",
+  "link": "7##########@sms.megafoncenter.ru"
+ },
+ {
+  "provider": "Megafon Volga",
+  "country": "Russia",
+  "link": "7##########@sms.mgsm.ru"
+ },
+ {
+  "provider": "Meteor",
+  "country": "Ireland",
+  "link": "#########@mms.mymeteor.ie"
+ },
+ {
+  "provider": "Metro PCS",
+  "country": "United States",
+  "link": "##########@mymetropcs.com"
+ },
+ {
+  "provider": "Metrocall",
+  "country": "United States",
+  "link": "##########@page.metrocall.com"
+ },
+ {
+  "provider": "Metrocall 2-way",
+  "country": "United States",
+  "link": "##########@my2way.com"
+ },
+ {
+  "provider": "Midwest Wireless",
+  "country": "United States",
+  "link": "##########@clearlydigital.com"
+ },
+ {
+  "provider": "Mobilecom PA",
+  "country": "United States",
+  "link": "##########@page.mobilcom.net"
+ },
+ {
+  "provider": "Mobilfone",
+  "country": "United States",
+  "link": "##########@page.mobilfone.com"
+ },
+ {
+  "provider": "Mobilink",
+  "country": "Pakistan",
+  "link": "##########@mobilinkgsm.com"
+ },
+ {
+  "provider": "Mobilis",
+  "country": "Germany",
+  "link": "0##########@mobilis.de"
+ },
+ {
+  "provider": "Mobility",
+  "country": "Bermuda",
+  "link": "#######@ml.bm"
+ },
+ {
+  "provider": "Mobistar",
+  "country": "Belgium",
+  "link": "########@mobistar.be"
+ },
+ {
+  "provider": "Mobitel",
+  "country": "Slovenia",
+  "link": "0########@linux.mobitel.si"
+ },
+ {
+  "provider": "Mobitel",
+  "country": "Sri Lanka",
+  "link": "##########@sms.mobitel.lk"
+ },
+ {
+  "provider": "Mobitel",
+  "country": "Tanzania",
+  "link": "##########@sms.co.tz"
+ },
+ {
+  "provider": "Morris Wireless",
+  "country": "United States",
+  "link": "##########@beepone.net"
+ },
+ {
+  "provider": "Movistar",
+  "country": "Argentina",
+  "link": "##########@sms.movistar.net.ar"
+ },
+ {
+  "provider": "Movistar",
+  "country": "Colombia",
+  "link": "##########@movistar.com.co"
+ },
+ {
+  "provider": "Mtel",
+  "country": "Bulgaria",
+  "link": "35988##########@sms.mtel.net"
+ },
+ {
+  "provider": "MTN",
+  "country": "South Africa",
+  "link": "##########@sms.co.za"
+ },
+ {
+  "provider": "MTS",
+  "country": "Belarus",
+  "link": "#########@sms.mts.by"
+ },
+ {
+  "provider": "MTS",
+  "country": "Russia",
+  "link": "7##########@sms.mts.ru"
+ },
+ {
+  "provider": "MTS (064)",
+  "country": "Serbia and Montenegro",
+  "link": "064##########@gm.telekom.rs"
+ },
+ {
+  "provider": "MTS (066)",
+  "country": "Serbia and Montenegro",
+  "link": "066##########@gm.telekom.rs"
+ },
+ {
+  "provider": "NBTel",
+  "country": "Canada",
+  "link": "##########@wirefree.informe.ca"
+ },
+ {
+  "provider": "Ncell (Mero Mobile)",
+  "country": "Nepal",
+  "link": "#ERROR!"
+ },
+ {
+  "provider": "Netcom",
+  "country": "Norway",
+  "link": "########@sms.netcom.no"
+ },
+ {
+  "provider": "Nextel",
+  "country": "Argentina",
+  "link": "##########@TwoWay.11nextel.net.ar"
+ },
+ {
+  "provider": "Nextel",
+  "country": "Brazil",
+  "link": "##########@nextel.com.br"
+ },
+ {
+  "provider": "Nextel",
+  "country": "Mexico",
+  "link": "##########@msgnextel.com.mx"
+ },
+ {
+  "provider": "Nextel",
+  "country": "United States",
+  "link": "##########@messaging.nextel.com"
+ },
+ {
+  "provider": "Nextel",
+  "country": "United States",
+  "link": "##########@page.nextel.com"
+ },
+ {
+  "provider": "NPI Wireless",
+  "country": "United States",
+  "link": "##########@npiwireless.com"
+ },
+ {
+  "provider": "Ntelos",
+  "country": "United States",
+  "link": "##########@pcs.ntelos.com"
+ },
+ {
+  "provider": "NTT DoCoMo",
+  "country": "Japan",
+  "link": "##########@docomo.ne.jp"
+ },
+ {
+  "provider": "O2",
+  "country": "Czech Republic",
+  "link": "00420#########@sms.cz.o2.com"
+ },
+ {
+  "provider": "O2",
+  "country": "Germany",
+  "link": "0##########@o2online.de"
+ },
+ {
+  "provider": "O2",
+  "country": "United Kingdom",
+  "link": "44##########@mmail.co.uk"
+ },
+ {
+  "provider": "OgVodafone",
+  "country": "Iceland",
+  "link": "##########@sms.is"
+ },
+ {
+  "provider": "Omnipoint",
+  "country": "United States",
+  "link": "##########@omnipoint.com"
+ },
+ {
+  "provider": "Omnitel",
+  "country": "Italy",
+  "link": "0##########@mail.omnitel.it"
+ },
+ {
+  "provider": "Omnitel \/ Telia",
+  "country": "Lithuania",
+  "link": "3706#######@sms.omnitel.lt"
+ },
+ {
+  "provider": "One Connect",
+  "country": "Austria",
+  "link": "##########@onemail.at"
+ },
+ {
+  "provider": "OnlineBeep",
+  "country": "United States",
+  "link": "##########@onlinebeep.net"
+ },
+ {
+  "provider": "Open Mobile",
+  "country": "Puerto Rico",
+  "link": "#######@email.openmobilepr.com"
+ },
+ {
+  "provider": "Optimus",
+  "country": "Portugal",
+  "link": "#########@sms.optimus.pt"
+ },
+ {
+  "provider": "Optus Mobile",
+  "country": "Australia",
+  "link": "0##########@optusmobile.com.au"
+ },
+ {
+  "provider": "Orange",
+  "country": "France",
+  "link": "##########@orange.fr"
+ },
+ {
+  "provider": "Orange",
+  "country": "India",
+  "link": "##########@orangemail.co.in"
+ },
+ {
+  "provider": "Orange",
+  "country": "United Kingdom",
+  "link": "44##########@orange.net"
+ },
+ {
+  "provider": "Orange Polska",
+  "country": "Poland",
+  "link": "#########@orange.pl"
+ },
+ {
+  "provider": "Oskar",
+  "country": "Czech Republic",
+  "link": "#########@mujoskar.cz"
+ },
+ {
+  "provider": "P&T Luxembourg",
+  "country": "Luxembourg",
+  "link": "#########@sms.luxgsm.lu"
+ },
+ {
+  "provider": "Pacific Bell",
+  "country": "United States",
+  "link": "##########@pacbellpcs.net"
+ },
+ {
+  "provider": "PageMart",
+  "country": "United States",
+  "link": "##########@pagemart.net"
+ },
+ {
+  "provider": "PageNet",
+  "country": "Canada",
+  "link": "##########@pagegate.pagenet.ca"
+ },
+ {
+  "provider": "PageOne NorthWest",
+  "country": "United States",
+  "link": "##########@page1nw.com"
+ },
+ {
+  "provider": "PCS One",
+  "country": "United States",
+  "link": "##########@pcsone.net"
+ },
+ {
+  "provider": "Personal Communication",
+  "country": "Russia",
+  "link": "##########@sms@pcom.ru"
+ },
+ {
+  "provider": "PGSM",
+  "country": "Hungary",
+  "link": "36#########@sms.pgsm.hu"
+ },
+ {
+  "provider": "Pioneer \/ Enid Cellular",
+  "country": "United States",
+  "link": "##########@msg.pioneerenidcellular.com"
+ },
+ {
+  "provider": "Plus GSM",
+  "country": "Poland",
+  "link": "#ERROR!"
+ },
+ {
+  "provider": "Price Communications",
+  "country": "United States",
+  "link": "##########@mobilecell1se.com"
+ },
+ {
+  "provider": "Primtel",
+  "country": "Russia",
+  "link": "##########@sms.primtel.ru"
+ },
+ {
+  "provider": "ProPage",
+  "country": "United States",
+  "link": "##########@page.propage.net"
+ },
+ {
+  "provider": "Public Service Cellular",
+  "country": "United States",
+  "link": "##########@sms.pscel.com"
+ },
+ {
+  "provider": "Qwest",
+  "country": "United States",
+  "link": "##########@qwestmp.com"
+ },
+ {
+  "provider": "RAM Page",
+  "country": "United States",
+  "link": "##########@ram-page.com"
+ },
+ {
+  "provider": "Rogers",
+  "country": "Canada",
+  "link": "##########@pcs.rogers.com"
+ },
+ {
+  "provider": "Safaricom",
+  "country": "United States",
+  "link": "##########@safaricomsms.com"
+ },
+ {
+  "provider": "Sasktel",
+  "country": "Canada",
+  "link": "##########@sms.sasktel.com"
+ },
+ {
+  "provider": "Satelindo GSM",
+  "country": "United States",
+  "link": "##########@satelindogsm.com"
+ },
+ {
+  "provider": "SCS-900",
+  "country": "Russia",
+  "link": "##########@scs-900.ru"
+ },
+ {
+  "provider": "Setar",
+  "country": "Aruba",
+  "link": "297##########@mas.aw"
+ },
+ {
+  "provider": "SFR",
+  "country": "France",
+  "link": "#########@sfr.fr"
+ },
+ {
+  "provider": "Si Mobil",
+  "country": "Slovenia",
+  "link": "########@simobil.net"
+ },
+ {
+  "provider": "Siminn",
+  "country": "Iceland",
+  "link": "##########@box.is"
+ },
+ {
+  "provider": "Simple Freedom",
+  "country": "United States",
+  "link": "##########@text.simplefreedom.net"
+ },
+ {
+  "provider": "Simyo",
+  "country": "Germany",
+  "link": "##########@eplus.de"
+ },
+ {
+  "provider": "Smart Cellular",
+  "country": "Philippines",
+  "link": "63##########@smart.mms.ph"
+ },
+ {
+  "provider": "Smart Telecom",
+  "country": "United States",
+  "link": "##########@mysmart.mymobile.ph"
+ },
+ {
+  "provider": "SMARTS",
+  "country": "Russia",
+  "link": "7##########@penza-gsm.ru"
+ },
+ {
+  "provider": "SMS Gateway for Google Project Fi network",
+  "country": "Global (Internet)",
+  "link": "+1##########@msg.fi.google.com"
+ },
+ {
+  "provider": "Sonofon",
+  "country": "Denmark",
+  "link": "########@note.sonofon.dk"
+ },
+ {
+  "provider": "Southern LINC",
+  "country": "United States",
+  "link": "##########@page.southernlinc.com"
+ },
+ {
+  "provider": "Southwestern Bell",
+  "country": "United States",
+  "link": "##########@email.swbw.com"
+ },
+ {
+  "provider": "Spectrum Mobile",
+  "country": "United States",
+  "link": "##########@vtext.com"
+ },
+ {
+  "provider": "Spikko",
+  "country": "Israel",
+  "link": "##########@spikosms.com"
+ },
+ {
+  "provider": "Sprint Paging",
+  "country": "United States",
+  "link": "##########@sprintpaging.com"
+ },
+ {
+  "provider": "Sprint PCS",
+  "country": "United States",
+  "link": "##########@messaging.sprintpcs.com"
+ },
+ {
+  "provider": "Starhub",
+  "country": "Singapore",
+  "link": "##########@enterprisemessaging-starhub.com"
+ },
+ {
+  "provider": "Sun Communications",
+  "country": "Philippines",
+  "link": "63##########@mms.suncellular.com.ph"
+ },
+ {
+  "provider": "SunCom",
+  "country": "United States",
+  "link": "##########@tms.suncom.com"
+ },
+ {
+  "provider": "Sunrise Communications",
+  "country": "Switzerland",
+  "link": "#########@gsm.sunrise.ch"
+ },
+ {
+  "provider": "Sunrise Mobile",
+  "country": "Switzerland",
+  "link": "#########@mysunrise.ch"
+ },
+ {
+  "provider": "Surewest Communications",
+  "country": "United States",
+  "link": "##########@mobile.surewest.com"
+ },
+ {
+  "provider": "Swisscom",
+  "country": "Switzerland",
+  "link": "#########@bluewin.ch"
+ },
+ {
+  "provider": "T-Mobile",
+  "country": "Austria",
+  "link": "43##########@sms.t-mobile.at"
+ },
+ {
+  "provider": "T-Mobile",
+  "country": "Croatia",
+  "link": "385##########@sms.t-mobile.hr"
+ },
+ {
+  "provider": "T-Mobile",
+  "country": "Germany",
+  "link": "#ERROR!"
+ },
+ {
+  "provider": "T-Mobile",
+  "country": "Netherlands",
+  "link": "31########@gin.nl"
+ },
+ {
+  "provider": "T-Mobile",
+  "country": "United Kingdom",
+  "link": "44##########@t-mobile.uk.net"
+ },
+ {
+  "provider": "T-Mobile",
+  "country": "United States",
+  "link": "##########@tmomail.net"
+ },
+ {
+  "provider": "Telcel (TMN)",
+  "country": "Portugal",
+  "link": "#########@sms.telecel.pt"
+ },
+ {
+  "provider": "Telcel(America Movil)",
+  "country": "Mexico",
+  "link": "##########@itelcel.com"
+ },
+ {
+  "provider": "Tele Danmark Mobil",
+  "country": "Denmark",
+  "link": "########@sms.tdk.dk"
+ },
+ {
+  "provider": "Tele2",
+  "country": "Latvia",
+  "link": "371#########@sms.tele2.lv"
+ },
+ {
+  "provider": "Tele2",
+  "country": "Lithuania",
+  "link": "3706#######@sms.tele2.lt"
+ },
+ {
+  "provider": "Tele2",
+  "country": "Sweden",
+  "link": "0#########@sms.tele2.se"
+ },
+ {
+  "provider": "Telecom Italia Mobile",
+  "country": "Italy",
+  "link": "0##########@timnet.com"
+ },
+ {
+  "provider": "Telecom New Zealand",
+  "country": "New Zealand",
+  "link": "##########@etxt.co.nz"
+ },
+ {
+  "provider": "Telefonica(Movistar)",
+  "country": "Spain",
+  "link": "#########@correo.movistar.net"
+ },
+ {
+  "provider": "Telenor",
+  "country": "Norway",
+  "link": "########@mobilpost.no"
+ },
+ {
+  "provider": "Telenor (062)",
+  "country": "Serbia and Montenegro",
+  "link": "##########@062.telenor.rs"
+ },
+ {
+  "provider": "Telenor (063)",
+  "country": "Serbia and Montenegro",
+  "link": "##########@063.telenor.rs"
+ },
+ {
+  "provider": "Telenor (069)",
+  "country": "Serbia and Montenegro",
+  "link": "##########@069.telenor.rs"
+ },
+ {
+  "provider": "Telenor 2",
+  "country": "Norway",
+  "link": "########@gsm-tekst.telemax.no"
+ },
+ {
+  "provider": "Telenor Bulgaria",
+  "country": "Bulgaria",
+  "link": "359#########@sms.telenor.bg"
+ },
+ {
+  "provider": "Teletouch",
+  "country": "United States",
+  "link": "##########@pageme.teletouch.com"
+ },
+ {
+  "provider": "Telia Denmark",
+  "country": "Denmark",
+  "link": "########@gsm1800.telia.dk"
+ },
+ {
+  "provider": "Telstra",
+  "country": "Australia",
+  "link": "##########@online.telstra.com.au"
+ },
+ {
+  "provider": "Telus",
+  "country": "Canada",
+  "link": "##########@msg.telus.com"
+ },
+ {
+  "provider": "Telus",
+  "country": "United States",
+  "link": "##########@msg.telus.com"
+ },
+ {
+  "provider": "Tigo",
+  "country": "Colombia",
+  "link": "##########@sms.colombiamovil.com.co"
+ },
+ {
+  "provider": "TIM",
+  "country": "United States",
+  "link": "##########@timnet.com"
+ },
+ {
+  "provider": "Tricom",
+  "country": "Dominican Republic",
+  "link": "#######@movil.tricom.net"
+ },
+ {
+  "provider": "Triton",
+  "country": "United States",
+  "link": "##########@tms.suncom.com"
+ },
+ {
+  "provider": "TSR Wireless",
+  "country": "United States",
+  "link": "##########@beep.com"
+ },
+ {
+  "provider": "UMC",
+  "country": "Ukraine",
+  "link": "#########@sms.umc.com.ua"
+ },
+ {
+  "provider": "Unicel",
+  "country": "United States",
+  "link": "##########@utext.com"
+ },
+ {
+  "provider": "Uraltel",
+  "country": "Russia",
+  "link": "##########@sms.uraltel.ru"
+ },
+ {
+  "provider": "US Cellular",
+  "country": "United States",
+  "link": "##########@email.uscc.net"
+ },
+ {
+  "provider": "USA Mobility",
+  "country": "United States",
+  "link": "##########@mobilecomm.net"
+ },
+ {
+  "provider": "Verizon PCS",
+  "country": "United States",
+  "link": "##########@myvzw.com"
+ },
+ {
+  "provider": "Verizon Wireless",
+  "country": "United States",
+  "link": "##########@vzwpix.com"
+ },
+ {
+  "provider": "Vessotel",
+  "country": "Russia",
+  "link": "##########@pager.irkutsk.ru"
+ },
+ {
+  "provider": "Virgin Mobile",
+  "country": "Canada",
+  "link": "##########@vmobile.ca"
+ },
+ {
+  "provider": "Virgin Mobile",
+  "country": "United Kingdom",
+  "link": "44##########@vmoble.com"
+ },
+ {
+  "provider": "Virgin Mobile",
+  "country": "United States",
+  "link": "##########@vmobl.com"
+ },
+ {
+  "provider": "Vivacom",
+  "country": "Bulgaria",
+  "link": "359##########@sms.vivacom.bg"
+ },
+ {
+  "provider": "Vodacom",
+  "country": "South Africa",
+  "link": "##########@voda.co.za"
+ },
+ {
+  "provider": "Vodafone",
+  "country": "Germany",
+  "link": "0##########@vodafone-sms.de"
+ },
+ {
+  "provider": "Vodafone",
+  "country": "Italy",
+  "link": "##########@sms.vodafone.it"
+ },
+ {
+  "provider": "Vodafone",
+  "country": "New Zealand",
+  "link": "##########@mtxt.co.nz"
+ },
+ {
+  "provider": "Vodafone",
+  "country": "Spain",
+  "link": "0#########@vodafone.es"
+ },
+ {
+  "provider": "Vodafone",
+  "country": "United Kingdom",
+  "link": "44##########@vodafone.net"
+ },
+ {
+  "provider": "Vodafone Chuugoku\/Western",
+  "country": "Japan",
+  "link": "##########@n.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Hokkaido",
+  "country": "Japan",
+  "link": "##########@d.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Hokuriko\/Central North",
+  "country": "Japan",
+  "link": "##########@r.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Kansai\/West,Osaka",
+  "country": "Japan",
+  "link": "##########@k.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Kanto\/Koushin\/East,Tokyo",
+  "country": "Japan",
+  "link": "##########@t.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Kyuushu\/Okinawa",
+  "country": "Japan",
+  "link": "##########@q.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Omnitel",
+  "country": "Italy",
+  "link": "##########@vizzavi.it"
+ },
+ {
+  "provider": "Vodafone Shikoku",
+  "country": "Japan",
+  "link": "##########@s.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Touhoku\/Niigata\/North",
+  "country": "Japan",
+  "link": "##########@h.vodafone.ne.jp"
+ },
+ {
+  "provider": "Vodafone Toukai\/Central",
+  "country": "Japan",
+  "link": "##########@c.vodafone.ne.jp"
+ },
+ {
+  "provider": "Warid",
+  "country": "Pakistan",
+  "link": "##########@waridtel.com"
+ },
+ {
+  "provider": "West Central Wireless",
+  "country": "United States",
+  "link": "##########@sms.wcc.net"
+ },
+ {
+  "provider": "Western Wireless",
+  "country": "United States",
+  "link": "##########@cellularonewest.com"
+ },
+ {
+  "provider": "Willcom",
+  "country": "Japan",
+  "link": "##########@pdx.ne.jp"
+ },
+ {
+  "provider": "Willcom di",
+  "country": "Japan",
+  "link": "##########@di.pdx.ne.jp"
+ },
+ {
+  "provider": "Willcom dj",
+  "country": "Japan",
+  "link": "##########@dj.pdx.ne.jp"
+ },
+ {
+  "provider": "Willcom dk",
+  "country": "Japan",
+  "link": "##########@dk.pdx.ne.jp"
+ },
+ {
+  "provider": "Wind",
+  "country": "Italy",
+  "link": "##########@txt.windmobile.it"
+ },
+ {
+  "provider": "Wyndtell",
+  "country": "United States",
+  "link": "##########@wyndtell.com"
+ },
+ {
+  "provider": "YCC",
+  "country": "Russia",
+  "link": "##########@sms.ycc.ru"
+ },
+ {
+  "provider": "ZONG",
+  "country": "Pakistan",
+  "link": "##########@zongsms.pk"
+ }
+]
