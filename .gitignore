@@ -8,5 +8,5 @@ data/two_players_data.csv
 data/three_players_data.csv
 data/four_players_data.csv
 .idea/
-*/scripts/
-*/logs/
+scripts/
+logs/
