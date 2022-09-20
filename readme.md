@@ -2,14 +2,14 @@
 
 ![screenshot](https://user-images.githubusercontent.com/54454071/191138235-c8122774-90af-40db-a3ca-365aa44c5a8d.png)
 
-Statistical analysis and texting service for a boardgame called Gaia Project. 
+Statistical analysis and texting service [web app](https://gpstats.dev) for a boardgame called Gaia Project. 
 
 Gaia Project is a deterministic perfect-information multiplayer boardgame with a large statespace created by Jens Drögemüller and Helge Ostertag. 
-This competitive euro-style game focusing on economy building, competition for actions/locations, 
-and victory point accumulation is in the early days of theory development. 
-This project aims to help (especially new) players analyze the validity of various approaches. 
+The competitive euro-style game focuses on economy building, competition for actions/locations, 
+and victory point accumulation.
+This project aims to help (especially new) players analyze the validity of various approaches, develop strategies, and advance their skills.
 
-This repo contains a set of Jupyter Notebooks presenting the code used to create [gpstats.dev](https://timgladyshev.com/gaia_stats/). These notebooks:
+This repo contains a set of Jupyter Notebooks presenting the code used to create the [app](https://gpstats.dev). These notebooks:
 1. Scrape and parse Gaia Project game data from [boardgamers.space](https://www.boardgamers.space/boardgame/gaia-project)
 2. Create interactive plots to show performance of various strategies
 3. Send SMS turn reminder messages to users on their turn
