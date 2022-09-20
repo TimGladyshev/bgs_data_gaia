@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 ## Notebooks
 
-#### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/texting_service.ipynb"><img src="https://img.shields.io/badge/nbviewer-texting__service-informational"/></a>
+#### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/texting_app.ipynb"><img src="https://img.shields.io/badge/nbviewer-texting__app-informational"/></a>
 Working example of a simple Flask app that allows registration features, and a threaded texting service.
 <br></br>
 #### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/fetch_names.ipynb"><img src="https://img.shields.io/badge/nbviewer-fetch__names-informational"/></a>
