@@ -6,7 +6,7 @@ Statistical analysis and texting service for a boardgame called Gaia Project.
 
 Gaia Project is a deterministic perfect-information multiplayer boardgame with a large statespace created by Jens Drögemüller and Helge Ostertag. 
 This competitive euro-style game focusing on economy building, competition for actions/locations, 
-and victory point accumulation is in the early days of game theory development. 
+and victory point accumulation is in the early days of theory development. 
 This project aims to help (especially new) players analyze the validity of various approaches. 
 
 This repo contains a set of Jupyter Notebooks presenting the code used to create [gpstats.dev](https://timgladyshev.com/gaia_stats/). These notebooks:
