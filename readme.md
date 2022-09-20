@@ -2,13 +2,15 @@
 
 ![screenshot](https://user-images.githubusercontent.com/54454071/191138235-c8122774-90af-40db-a3ca-365aa44c5a8d.png)
 
-Gaia Project is a deterministic perfect-information multiplayer boardgame with a large statespace. 
+Statistical analysis and texting service for a boardgame called Gaia Project. 
+
+Gaia Project is a deterministic perfect-information multiplayer boardgame with a large statespace created by Jens Drögemüller and Helge Ostertag. 
 This competitive euro-style game focusing on economy building, competition for actions/locations, 
 and victory point accumulation is in the early days of game theory development. 
 This project aims to help (especially new) players analyze the validity of various approaches. 
 
-This repo contains a set of Jupyter Notebooks presenting code used to create [gpstats.dev](https://timgladyshev.com/gaia_stats/). These notebooks:
-1. Scrape and analyze Gaia Project game data from [boardgamers.space](https://www.boardgamers.space/boardgame/gaia-project)
+This repo contains a set of Jupyter Notebooks presenting the code used to create [gpstats.dev](https://timgladyshev.com/gaia_stats/). These notebooks:
+1. Scrape and parse Gaia Project game data from [boardgamers.space](https://www.boardgamers.space/boardgame/gaia-project)
 2. Create interactive plots to show performance of various strategies
 3. Send SMS turn reminder messages to users on their turn
 
@@ -23,8 +25,10 @@ pip install -r requirements.txt
 
 ## Notebooks
 
-#### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/fetch_names.ipynb"><img src="https://img.shields.io/badge/nbviewer-fetch__names-informational"/></a> 
-
+#### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/texting_service.ipynb"><img src="https://img.shields.io/badge/nbviewer-texting__service-informational"/></a>
+Working example of a simple Flask app that allows registration features, and a threaded texting service.
+<br></br>
+#### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/fetch_names.ipynb"><img src="https://img.shields.io/badge/nbviewer-fetch__names-informational"/></a>
 Uses Selenium to scrape names for all completed games. Names are used to create links to the game data api.
 <br></br>
 #### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/fetch_jsons.ipynb"><img src="https://img.shields.io/badge/nbviewer-fetch__jsons-informational"/></a>
@@ -32,9 +36,6 @@ Fetches jsons from the game data [api](https://www.boardgamers.space/api/game/Mo
 <br></br>
 #### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/parse_jsons.ipynb"><img src="https://img.shields.io/badge/nbviewer-parse__jsons-informational"/></a>
 Parses json game data to pandas df and saves as pickle or csv.
-<br></br>
-#### <a href="https://nbviewer.org/github/TimGladyshev/bgs_data_gaia/blob/master/texting_service.ipynb"><img src="https://img.shields.io/badge/nbviewer-texting__service-informational"/></a>
-Working example of a simple Flask app that allows registration features, and a threaded texting service.
 <br></br>
 ### others:
 Create the plotly figures for the site. 
