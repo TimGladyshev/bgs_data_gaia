@@ -1,14 +1,1 @@
-{
-    "augury": {
-        "username": "augury",
-        "country": "United States",
-        "provider": "T-Mobile",
-        "number": "4022171278"
-    },
-    "theSkyPirate": {
-        "username": "theSkyPirate",
-        "country": "United States",
-        "provider": "Verizon Wireless",
-        "number": "6179107588"
-    }
-}
+{}
